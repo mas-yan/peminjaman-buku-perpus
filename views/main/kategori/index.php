@@ -53,7 +53,7 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Ubah Kategori</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -63,14 +63,12 @@
                         <?php
                         $id = $data['id'];
                         $sql_ubag = "SELECT * FROM kategori_buku WHERE id = '$id'";
-                        $no = 1;
                         $query_ubah = mysqli_query($koneksi, $sql_ubag) or die(mysqli_error($koneksi));
                         while ($data_ubah = mysqli_fetch_assoc($query_ubah)) : ?>
-
                           <input type="hidden" value="<?= $data_ubah['id'] ?>" class="form-control" name="id" placeholder="Masukkan Kategori">
                           <div class="form-group">
                             <label for="kategory">Masukkan Kategori</label>
-                            <input type="text" required class="form-control" name="kategory" placeholder="Masukkan Kategori">
+                            <input type="text" value="<?= $data_ubah['jenis'] ?>" required class="form-control" name="kategory" placeholder="Masukkan Kategori">
                           </div>
                     </div>
                     <div class="modal-footer">

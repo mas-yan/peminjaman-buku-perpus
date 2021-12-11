@@ -4,13 +4,13 @@ if ($page == 'dashboard'  || $page == '') {
   $dashboard = 'active';
 } else if ($page == 'kategori') {
   $kategori = 'active';
-} else if ($page == 'buku') {
+} else if ($page == 'buku' || $page == 'add-buku' || $page == 'edit-buku') {
   $buku = 'active';
-} else if ($page == 'rak') {
+} else if ($page == 'rak' || $page == 'add-rak' || $page == 'edit-rak') {
   $rak = 'active';
-} else if ($page == 'peminjaman') {
+} else if ($page == 'peminjaman' || $page == 'add-peminjaman' || $page == 'edit-peminjaman') {
   $peminjaman = 'active';
-} else if ($page == 'anggota') {
+} else if ($page == 'anggota' || $page == 'add-anggota' || $page == 'edit-anggota') {
   $anggota = 'active';
 }
 ?>

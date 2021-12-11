@@ -2,14 +2,12 @@
 include_once '../include/koneksi.php';
 session_start();
 if (!isset($_SESSION['user'])) {
-  header('location: public/index.php');
+  header('location: ../views/auth/index.php');
 }
 include '../views/layout/header.php';
 include '../views/layout/navbar.php';
 include '../views/layout/sidebar.php';
 ?>
-
-
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

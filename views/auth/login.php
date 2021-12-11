@@ -17,6 +17,6 @@ if ($cek > 0) {
 } else {
   echo "<script>
 	alert('username atau password anda salah');
-	document.location='../../public/index.php';
+  document.location='../../public/index.php';
 	</script>";
 }
