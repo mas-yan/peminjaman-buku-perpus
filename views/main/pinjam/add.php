@@ -25,16 +25,21 @@
               <?php
               $buku = "SELECT * FROM buku";
               $query = mysqli_query($koneksi, $buku) or die(mysqli_error($koneksi));
-              while ($data = mysqli_fetch_assoc($query)) : ?>
-                <option value="<?= $data['id'] ?>"><?= $data['nama_buku'] ?></option>
-              <?php endwhile; ?>
+              while ($data = mysqli_fetch_assoc($query)) :
+                if ($data['total_buku'] < 1) :
+              ?>
+                  <option value="" disabled><?= $data['nama_buku'] ?> (Buku habis dipinjam)</option>
+                <?php else : ?>
+                  <option value="<?= $data['id'] ?>"><?= $data['nama_buku'] ?></option>
+              <?php endif;
+              endwhile; ?>
             </select>
           </div>
           <div class="form-group">
             <label for="pinjam">Tanggal Pinjam</label>
             <input type="date" required name="pinjam" id="pinjam" class="form-control">
           </div>
-          <button type="submit" name="add" class="btn btn-primary mt-3">Tambah Buku</button>
+          <button type="submit" name="add" class="btn btn-primary mt-3">Pinjam Buku</button>
         </form>
       </div>
     </div>
@@ -48,7 +53,14 @@ if (isset($_POST['add'])) {
   $buku = $_POST['buku'];
   $pinjam = $_POST['pinjam'];
 
+  $qbuku = mysqli_query($koneksi, "SELECT * FROM buku WHERE id = '$buku'");
+  $data = mysqli_fetch_assoc($qbuku);
+  $total_buku = $data['total_buku'] - 1;
+
   $queryTambah = mysqli_query($koneksi, "INSERT INTO pnjam VALUES ('','$name','$buku','$pinjam',null,'')") or die(mysqli_error($koneksi));
+  $query = "UPDATE buku SET total_buku = '$total_buku' WHERE id = $buku";
+  $sql_edit = mysqli_query($koneksi, $query);
+
 
   if ($queryTambah) {
 ?>
