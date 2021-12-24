@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Des 2021 pada 04.54
+-- Waktu pembuatan: 24 Des 2021 pada 16.49
 -- Versi server: 10.4.18-MariaDB-log
 -- Versi PHP: 7.4.16
 
@@ -39,8 +39,9 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `no_telepon`) VALUES
-(3, 'mas alfi', 'semarang', '0123456'),
-(4, 'al', 'kendal', '2763827632');
+(1, 'Riyan Alfian', 'semarang', '0123456790'),
+(2, 'mas alfi', 'kendal', '2763827632'),
+(3, 'mas al', 'pati', '0123456');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `id_kategori`, `nama_buku`, `penerbit`, `tahun-terbit`, `total_buku`, `rak`) VALUES
-(5, 8, 'Matahari Sudah Dekat', 'Elex Media Komputindo', '2017-10-10', 12, 1),
-(6, 13, 'Sejarah Perang Dunia Ke-1', 'Gramedia Pustaka Utama', '2021-11-11', 52, 1),
-(7, 12, 'kemajuan teknologi 4.0', 'Elex Media Komputindo', '2021-12-21', 34, 1);
+(1, 1, 'Sapiens', 'Elex Media Komputindo', '2021-12-24', 2, 1),
+(2, 3, 'Sejarah Internet', 'Gramedia Pustaka Utama', '2021-12-24', 32, 1);
 
 -- --------------------------------------------------------
 
@@ -83,9 +83,9 @@ CREATE TABLE `kategori_buku` (
 --
 
 INSERT INTO `kategori_buku` (`id`, `jenis`) VALUES
-(8, 'science'),
-(12, 'teknologi'),
-(13, 'sejarah');
+(1, 'science'),
+(2, 'sejarah'),
+(3, 'teknologi');
 
 -- --------------------------------------------------------
 
@@ -107,9 +107,9 @@ CREATE TABLE `pnjam` (
 --
 
 INSERT INTO `pnjam` (`id`, `anggota_id`, `buku_id`, `tanggal_pinjam`, `tanggal_pengembalian`, `denda`) VALUES
-(3, 3, 5, '2021-12-11', '2021-12-25', 0),
-(4, 4, 6, '2021-12-18', '2021-12-30', 0),
-(5, 3, 5, '2021-12-16', NULL, 0);
+(1, 1, 1, '2021-12-01', '2021-12-13', 11000),
+(2, 2, 2, '2021-12-01', '2021-12-24', 22000),
+(3, 3, 2, '2021-12-01', '2021-12-12', 11000);
 
 -- --------------------------------------------------------
 
@@ -119,7 +119,7 @@ INSERT INTO `pnjam` (`id`, `anggota_id`, `buku_id`, `tanggal_pinjam`, `tanggal_p
 
 CREATE TABLE `rak_buku` (
   `id` int(11) NOT NULL,
-  `no_rak` int(11) NOT NULL,
+  `no_rak` varchar(11) NOT NULL,
   `nama_rak` varchar(255) NOT NULL,
   `tempat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -129,9 +129,8 @@ CREATE TABLE `rak_buku` (
 --
 
 INSERT INTO `rak_buku` (`id`, `no_rak`, `nama_rak`, `tempat`) VALUES
-(1, 2, 'Rak Sains', 'lantai 2'),
-(3, 1, 'mawar', 'lantai 1'),
-(4, 3, 'melati', 'lantai 1');
+(1, 'A1', 'Mawar', 'lantai 1'),
+(2, 'A2', 'Mawar', 'lantai 1');
 
 -- --------------------------------------------------------
 
@@ -141,7 +140,7 @@ INSERT INTO `rak_buku` (`id`, `no_rak`, `nama_rak`, `tempat`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `no_induk` int(11) NOT NULL,
+  `no_induk` varchar(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
@@ -152,7 +151,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `no_induk`, `nama`, `username`, `password`) VALUES
-(1, 1234, 'admin', 'admin@gmail.com', 'password');
+(1, '19.01.53.01', 'Riyan Alfian', 'admin@gmail.com', 'password');
 
 --
 -- Indexes for dumped tables
@@ -207,31 +206,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_buku`
 --
 ALTER TABLE `kategori_buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pnjam`
 --
 ALTER TABLE `pnjam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `rak_buku`
 --
 ALTER TABLE `rak_buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
