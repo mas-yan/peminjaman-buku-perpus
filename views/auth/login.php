@@ -12,7 +12,7 @@ if ($cek > 0) {
   $data = mysqli_fetch_assoc($query);
   $_SESSION['user'] = $username;
   $_SESSION['nama'] = $data['nama'];
-  $_SESSION['no_nduk'] = $data['no_nduk'];
+  $_SESSION['no_induk'] = $data['no_induk'];
   header('location: ../../public/index.php');
 } else {
   echo "<script>
