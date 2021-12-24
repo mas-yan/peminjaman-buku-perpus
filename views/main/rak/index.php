@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-12">
-    <a href="?page=add-rak" class="btn btn-primary mb-3 ">Tambah</a>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Data Rak Buku</h3>
+        <a href="?page=add-rak" class="btn btn-primary float-right btn-sm ">Tambah</a>
       </div>
       <!-- /.card-header -->
       <div class="card-body">

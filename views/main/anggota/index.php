@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-12">
-    <a href="?page=add-anggota" class="mb-3 btn btn-primary">Tambah</a>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Data Anggota</h3>
+        <a href="?page=add-anggota" class="float-right btn-sm btn btn-primary">Tambah Anggota</a>
       </div>
       <!-- /.card-header -->
       <div class="card-body">

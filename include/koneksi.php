@@ -18,3 +18,8 @@ function baseUrl($url = null)
     return $baseUrl;
   }
 }
+
+function moneyFormat($str)
+{
+  return 'Rp ' . number_format($str, '0', '', '.');
+}

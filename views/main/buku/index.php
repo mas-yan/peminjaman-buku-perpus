@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-12">
-    <a href="?page=add-buku" class=" mb-3 btn btn-primary">Tambah</a>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Data Buku</h3>
+        <a href="?page=add-buku" class=" float-right btn-sm btn btn-primary">Tambah Buku</a>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -28,7 +28,7 @@
             while ($data = mysqli_fetch_assoc($query)) : ?>
               <tr>
                 <td><?= $no++ ?></td>
-                <td><?= $data['nama_buku'] ?></td>
+                <td style="width: 170px;"><?= $data['nama_buku'] ?></td>
                 <td><?= $data['jenis'] ?></td>
                 <td><?= $data['penerbit'] ?></td>
                 <td><?= $data['tahun-terbit'] ?></td>

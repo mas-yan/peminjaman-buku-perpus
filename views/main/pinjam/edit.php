@@ -52,9 +52,11 @@ while ($data_pinjam = mysqli_fetch_assoc($sql)) : ?>
       let t2 = d2.getTime();
       const getIdDenda = document.getElementById('denda')
       // hitung denda
-      if (t1 > t2) {
+      if (t1 >= t2) {
         const total = parseInt((t1 - t2) / (24 * 3600 * 1000));
-        getIdDenda.value = (total * 1000) + 10000 - 1000
+        getIdDenda.value = (total * 1000) + 10000
+      } else {
+        getIdDenda.value = 0
       }
 
     }

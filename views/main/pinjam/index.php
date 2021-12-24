@@ -1,9 +1,15 @@
 <div class="row">
   <div class="col-12">
-    <a href="?page=add-peminjaman" class=" mb-3 btn btn-primary">Tambah</a>
+    <div class="callout callout-danger">
+      <h5>Informasi Denda!</h5>
+
+      <p>Peminjaman melebihi 10 hari akan dikenai denda Rp 10.000 <br> dan berkelipatan Rp 1.000 tiap harinya.</p>
+    </div>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Data Peminjam Buku</h3>
+        <a href="?page=add-peminjaman" class="float-right btn-sm btn btn-primary">Tambah Peminjaman</a>
+
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -31,7 +37,7 @@
                 <td><?= $data['nama_buku'] ?></td>
                 <td><?= $data['tanggal_pinjam'] ?></td>
                 <td><?= ($data['tanggal_pengembalian'] == null) ? 'belum dikembalikan' : $data['tanggal_pengembalian'] ?></td>
-                <td><?= $data['denda'] ?></td>
+                <td><?= moneyFormat($data['denda']) ?></td>
                 <td>
                   <?php if ($data['tanggal_pengembalian'] == null) : ?>
                     <a href="?page=edit-peminjaman&id=<?= $data['id'] ?>" class="btn btn-warning btn-sm">Ajukan Pengembalian</a>

@@ -2,7 +2,14 @@
 $page = @$_GET['page'];
 $id = @$_GET['id'];
 
+if (!$page) {
+  include '../views/main/dashboard/index.php';
+}
+
 switch ($page) {
+  case ('dashboard'):
+    include '../views/main/dashboard/index.php';
+    break;
   case 'kategori':
     include '../views/main/kategori/index.php';
     break;
@@ -43,6 +50,6 @@ switch ($page) {
     include '../views/main/anggota/edit.php';
     break;
   default:
-    'halaman Dashboard';
+    include '../views/main/kategori/index.php';
     break;
 }
