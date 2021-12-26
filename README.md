@@ -2,8 +2,7 @@
 
 ## Tugas Pemrograman Web
 
-Riyan Alfian (19.01.53.0112)
-Miftahul Rizki Al Fajri (19.01.53.0106)
+Riyan Alfian (19.01.53.0112) | Miftahul Rizki Al Fajri (19.01.53.0106)
 
 
 ### Langkah Instalasi
@@ -12,6 +11,7 @@ Miftahul Rizki Al Fajri (19.01.53.0106)
 2. `masuk directory folder`
 3. `buat database perpus`
 4. `import databse`
-5. `jalankan aplikasi di browser`
-6. username login `admin@gmail.com`
-7. password = `password`
+5. setting konfigurasi database di folder `include/koneksi.php`
+6. `jalankan aplikasi di browser`
+7. username login `admin@gmail.com`
+8. password = `password`

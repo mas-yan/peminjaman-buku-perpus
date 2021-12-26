@@ -10,7 +10,9 @@ if ($koneksi) {
 
 function baseUrl($url = null)
 {
-  $baseUrl = "http://localhost/peminjaman-buku-perpus";
+  $uri = explode('/', $_SERVER['REQUEST_URI'])[1];
+
+  $baseUrl = "http://localhost/" . $uri;
 
   if ($url != null) {
     return $baseUrl . "/" . $url;

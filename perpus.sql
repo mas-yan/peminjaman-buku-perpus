@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Des 2021 pada 16.49
+-- Waktu pembuatan: 26 Des 2021 pada 22.10
 -- Versi server: 10.4.18-MariaDB-log
 -- Versi PHP: 7.4.16
 
@@ -41,7 +41,9 @@ CREATE TABLE `anggota` (
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `no_telepon`) VALUES
 (1, 'Riyan Alfian', 'semarang', '0123456790'),
 (2, 'mas alfi', 'kendal', '2763827632'),
-(3, 'mas al', 'pati', '0123456');
+(3, 'mas al', 'pati', '0123456'),
+(4, 'Miftahul Rizki Al Fajri', 'kendal', '0123456790'),
+(5, 'Rizki', 'semarang', '2763827632');
 
 -- --------------------------------------------------------
 
@@ -64,8 +66,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `id_kategori`, `nama_buku`, `penerbit`, `tahun-terbit`, `total_buku`, `rak`) VALUES
-(1, 1, 'Sapiens', 'Elex Media Komputindo', '2021-12-24', 2, 1),
-(2, 3, 'Sejarah Internet', 'Gramedia Pustaka Utama', '2021-12-24', 32, 1);
+(1, 1, 'Sapiens', 'Elex Media Komputindo', '2021-12-24', 1, 1),
+(2, 3, 'Sejarah Internet', 'Gramedia Pustaka Utama', '2021-12-24', 31, 1);
 
 -- --------------------------------------------------------
 
@@ -109,7 +111,9 @@ CREATE TABLE `pnjam` (
 INSERT INTO `pnjam` (`id`, `anggota_id`, `buku_id`, `tanggal_pinjam`, `tanggal_pengembalian`, `denda`) VALUES
 (1, 1, 1, '2021-12-01', '2021-12-13', 11000),
 (2, 2, 2, '2021-12-01', '2021-12-24', 22000),
-(3, 3, 2, '2021-12-01', '2021-12-12', 11000);
+(3, 3, 2, '2021-12-01', '2021-12-12', 11000),
+(5, 4, 2, '2021-12-25', NULL, 0),
+(6, 5, 1, '2021-12-24', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +210,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `buku`
@@ -224,7 +228,7 @@ ALTER TABLE `kategori_buku`
 -- AUTO_INCREMENT untuk tabel `pnjam`
 --
 ALTER TABLE `pnjam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `rak_buku`
