@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Des 2021 pada 22.10
+-- Waktu pembuatan: 27 Des 2021 pada 07.42
 -- Versi server: 10.4.18-MariaDB-log
 -- Versi PHP: 7.4.16
 
@@ -39,11 +39,7 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `no_telepon`) VALUES
-(1, 'Riyan Alfian', 'semarang', '0123456790'),
-(2, 'mas alfi', 'kendal', '2763827632'),
-(3, 'mas al', 'pati', '0123456'),
-(4, 'Miftahul Rizki Al Fajri', 'kendal', '0123456790'),
-(5, 'Rizki', 'semarang', '2763827632');
+(1, 'Riyan Alfian', 'semarang', '0123456790');
 
 -- --------------------------------------------------------
 
@@ -66,8 +62,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `id_kategori`, `nama_buku`, `penerbit`, `tahun-terbit`, `total_buku`, `rak`) VALUES
-(1, 1, 'Sapiens', 'Elex Media Komputindo', '2021-12-24', 1, 1),
-(2, 3, 'Sejarah Internet', 'Gramedia Pustaka Utama', '2021-12-24', 31, 1);
+(1, 1, 'Sapiens', 'Gramedia Pustaka Utama', '2020-02-27', 58, 1);
 
 -- --------------------------------------------------------
 
@@ -85,9 +80,7 @@ CREATE TABLE `kategori_buku` (
 --
 
 INSERT INTO `kategori_buku` (`id`, `jenis`) VALUES
-(1, 'science'),
-(2, 'sejarah'),
-(3, 'teknologi');
+(1, 'science');
 
 -- --------------------------------------------------------
 
@@ -109,11 +102,7 @@ CREATE TABLE `pnjam` (
 --
 
 INSERT INTO `pnjam` (`id`, `anggota_id`, `buku_id`, `tanggal_pinjam`, `tanggal_pengembalian`, `denda`) VALUES
-(1, 1, 1, '2021-12-01', '2021-12-13', 11000),
-(2, 2, 2, '2021-12-01', '2021-12-24', 22000),
-(3, 3, 2, '2021-12-01', '2021-12-12', 11000),
-(5, 4, 2, '2021-12-25', NULL, 0),
-(6, 5, 1, '2021-12-24', NULL, 0);
+(1, 1, 1, '2021-12-27', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -133,8 +122,7 @@ CREATE TABLE `rak_buku` (
 --
 
 INSERT INTO `rak_buku` (`id`, `no_rak`, `nama_rak`, `tempat`) VALUES
-(1, 'A1', 'Mawar', 'lantai 1'),
-(2, 'A2', 'Mawar', 'lantai 1');
+(1, 'A1', 'Mawar', 'lantai 1');
 
 -- --------------------------------------------------------
 
@@ -155,7 +143,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `no_induk`, `nama`, `username`, `password`) VALUES
-(1, '19.01.53.01', 'Riyan Alfian', 'admin@gmail.com', 'password');
+(1, '123456789', 'admin', 'admin@gmail.com', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -210,31 +198,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_buku`
 --
 ALTER TABLE `kategori_buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pnjam`
 --
 ALTER TABLE `pnjam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `rak_buku`
 --
 ALTER TABLE `rak_buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
